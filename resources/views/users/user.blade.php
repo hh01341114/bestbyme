@@ -12,6 +12,43 @@
 </head>
 
 <body>
- <h1>test</h1>   
+ <ul class="grid grid-col-3">
+    <li class="grid-item">
+        <article class="card">
+            <a href="#" class="card-link">
+                <span class="card-label">topics!</span>
+                <img class="https://dummyimage.com/200x100/000/fff" alt="thumbnail">
+                <div class="card-info">
+                <time class="card-time" datetime="yyyy-mm-dd">2024.10.17</time>
+                <h1 class="card-headline">Blog Title</h1>
+                </div>
+            </a>
+        </article>
+    </li>
+    <li class="grid-item">
+        <article class="card">
+            <a href="#" class="card-link">
+                <span class="card-label">topics!</span>
+                <img class="https://dummyimage.com/200x100/000/fff" alt="thumbnail">
+                <div class="card-info">
+                <time class="card-time" datetime="yyyy-mm-dd">2024.10.17</time>
+                <h1 class="card-headline">Blog Title</h1>
+                </div>
+            </a>
+        </article>
+    </li>
+    <li class="grid-item">
+        <article class="card">
+            <a href="#" class="card-link">
+                <span class="card-label">topics!</span>
+                <img class="https://dummyimage.com/200x100/000/fff" alt="thumbnail">
+                <div class="card-info">
+                <time class="card-time" datetime="yyyy-mm-dd">2024.10.17</time>
+                <h1 class="card-headline">Blog Title</h1>
+                </div>
+            </a>
+        </article>
+    </li>
+ </ul>
 </body>
 </html>
