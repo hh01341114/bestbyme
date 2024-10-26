@@ -5,8 +5,6 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () { return view('welcome'); });
 
-Route::get('/', function () {
-    return view('users.user');
-});
+Route::get('/', [PostController::class, 'index']);
 
-Route::get('/users', [PostController::class, 'index']); 
+Route::get('/blogs/{blog}', [PostController::class ,'show']);

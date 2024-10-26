@@ -2,20 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    /**
+/**
  * Post一覧を表示する
  * 
- * @param User $user 
+ * @param Blog $blog 
  * @return array
  */
-    public function index(User $user)
+// PostController.php
+    public function index(Blog $blog)
     {
-        $users = $user->get();
-        return view('users', ['users' => $users]);
+        $featuredArticles = $blog->getFeaturedArticles();
+        $paginatedArticles = $blog->getPaginatedArticles();
+
+        return view('users.user', [
+            'featuredArticles' => $featuredArticles,
+            'paginatedArticles' => $paginatedArticles
+        ]);
+    }
+
+    public function show(Blog $blog)
+    {
+        return view('users.show')->with(['blog' => $blog]);
     }
 }
