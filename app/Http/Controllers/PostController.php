@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    /**
+/**
  * Post一覧を表示する
  * 
  * @param Blog $blog 
@@ -24,5 +24,10 @@ class PostController extends Controller
             'featuredArticles' => $featuredArticles,
             'paginatedArticles' => $paginatedArticles
         ]);
+    }
+
+    public function show(Blog $blog)
+    {
+        return view('users.show')->with(['blog' => $blog]);
     }
 }

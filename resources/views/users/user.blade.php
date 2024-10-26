@@ -40,7 +40,7 @@
                 <li class="grid-item">
                     <article class="new-card">
                         @foreach ($paginatedArticles as $blog)
-                            <a href="#" class="new-card-link">
+                            <a href="/blogs/{{ $blog->id }}" class="new-card-link">
                                 <h2 class="new-card-headline">{{ $blog->title }}</h2>
                                 <span class="new-card-label">new</span>
                                 <img src="https://dummyimage.com/200x100/000/fff" alt="thumbnail">
