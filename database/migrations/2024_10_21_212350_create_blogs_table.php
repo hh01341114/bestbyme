@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('category_id')->constrained('categories');
+            $table->string('title');
+            $table->text('body');
+            $table->timestamps();
             $table->softDeletes();
-            $table->string('phone_number')->nullable();
-            $table->integer('age')->nullable();
-            $table->string('profile_image')->nullable();
         });
     }
 
@@ -24,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['phone_number', 'age', 'profile_image']);
-        });
+        Schema::dropIfExists('blogs');
     }
 };
