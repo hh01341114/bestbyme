@@ -19,7 +19,7 @@
                 <li class="grid-item">
                     <article class="featured-card">
                         @foreach ($featuredArticles as $blog)
-                            <a href="#" class="featured-card-link">
+                            <a href="/blogs/{{ $blog->id }}" class="featured-card-link">
                                 <h2 class="featured-card-headline">{{ $blog->title }}</h2>
                                 <span class="featured-card-label">topics!</span>
                                 <img src="https://dummyimage.com/200x100/000/fff" alt="thumbnail">
@@ -56,5 +56,6 @@
                 {{ $paginatedArticles->links() }}
             </div>
         </section>
+        <a href='/users/create'>記事を投稿してみる</a>
 </body>
 </html>

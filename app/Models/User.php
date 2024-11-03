@@ -7,14 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class User extends Model
-{
-    use SoftDeletes;
-
-    // その他のモデルの設定
-}
 
 class User extends Authenticatable
 {
