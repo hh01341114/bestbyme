@@ -11,8 +11,9 @@
     <title>Craft by Me</title>
 </head>
 
-<body>
-    <h1>投稿作成画面</h1>
+<x-app-layout>
+    <body>
+        <h1>投稿作成画面</h1>
         <form action="/blogs" method="POST">
             @csrf
             <div class="title-create">
@@ -30,5 +31,6 @@
         <div class="footer">
             <a href="/">戻る</a>
         </div>
-</body>
+    </body>
+</x-app-layout>
 </html>
