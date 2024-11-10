@@ -13,11 +13,17 @@ class Blog extends Model
     //特集ページのページネイション
     public function getFeaturedArticles(int $limit_count = 3)
     {
-        return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
+        return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
     //新着投稿のページネイション
     public function getPaginatedArticles(int $limit_count = 4)
     {
-        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
 }

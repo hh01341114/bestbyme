@@ -62,7 +62,8 @@
                     {{ $paginatedArticles->links() }}
                 </div>
             </section>
-            <a href='/users/create'>記事を投稿してみる</a>
+            <a href="/categories/{{ $blog->category->id }}">{{ $blog->category->name }}</a>
+            <a href='/blogs/create'>記事を投稿してみる</a>
     </body>
 </x-app-layout>
 </html>

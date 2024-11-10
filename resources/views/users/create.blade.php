@@ -21,6 +21,15 @@
                 <input type="text" name="blog[title]" placeholder="タイトル" value="{{ old('blog.title') }}"/>
                 <p class="title_error" style="color:red">{{ $errors->first('blog.title') }}</p>
             </div>
+            <div class="category">
+                <h2>カテゴリー</h2>
+                <select name="blog[category_id]">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="body-create">
                 <h2>投稿内容</h2>
                 <textarea name="blog[body]" placeholder="購入に至った経緯やストーリー">{{ old('blog.body') }}</textarea>
@@ -29,7 +38,7 @@
             <input type="submit" value="投稿する"/>
         </form>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/blogs">戻る</a>
         </div>
     </body>
 </x-app-layout>
