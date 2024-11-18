@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Http\Requests\PostRequest;
+use Illuminate\Support\Facades\Log;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -34,14 +36,19 @@ class PostController extends Controller
 //投稿作成
     public function create()
     {
-        return view('users.create');
+        $categories = Category::all();
+        return view('users.create')->with('categories', $categories);
     }
 //投稿保存処理
     public function store(Blog $blog, PostRequest $request,)
     {
         $input = $request['blog'];
+        $input['user_id'] = auth()->user()->id;
+        // ログに出力して確認
+        Log::info('User ID set in input:', $input);
+
         $blog->fill($input)->save();
 
-        return redirect('/blogs' . $blog->id);
+        return redirect('/blogs/' . $blog->id);
     }
 }
