@@ -30,30 +30,6 @@
                 <button class="btn-follow">フォロー</button>
                 <button class="btn-like">いいね</button>
             </div>
-            <div class="post-content">
-                <h1 class="post-item">itemsテーブル商品名</h1>
-                <img class="post-image" src="https://dummyimage.com/200x100/000/fff" alt="thumbnail">
-                <h2 class="product-info">{{ $blog->body }}</h2>
-
-                <!-- カテゴリー名を表示 -->
-                <a href="/categories/{{ $blog->category->id }}">{{ $blog->category->name }}</a>
-
-                <!-- ボタン部分 -->
-                <button class="btn-follow">フォロー</button>
-                <button class="btn-like">いいね</button>
-            </div>
-            <div class="post-content">
-                <h1 class="post-item">itemsテーブル商品名</h1>
-                <img class="post-image" src="https://dummyimage.com/200x100/000/fff" alt="thumbnail">
-                <h2 class="product-info">{{ $blog->body }}</h2>
-
-                <!-- カテゴリー名を表示 -->
-                <a href="/categories/{{ $blog->category->id }}">{{ $blog->category->name }}</a>
-
-                <!-- ボタン部分 -->
-                <button class="btn-follow">フォロー</button>
-                <button class="btn-like">いいね</button>
-            </div>
             <div class="footer">
                 <a href="/blogs">戻る</a>
             </div>
