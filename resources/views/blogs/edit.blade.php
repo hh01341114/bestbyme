@@ -72,6 +72,11 @@
                     更新
                 </button>
             </div>
+
+            <!-- 戻るボタン -->
+            <div class="footer" style="margin-top: 10px;">
+                <a href="/" class="btn btn-secondary">戻る</a>
+            </div>
         </form>
 
         <!-- JavaScriptでフォームを動的に追加 -->
