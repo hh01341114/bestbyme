@@ -46,4 +46,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // ユーザーがフォローしているユーザー
+    public function following()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'following_id', 'followed_id');
+    }
+
+    // ユーザーがフォローされているユーザー
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'followed_id', 'following_id');
+    }
+    
+    //いいね機能
+    public function likedBlogs()
+    {
+        return $this->belongsToMany(Blog::class, 'likes', 'user_id', 'blog_id');
+    }
 }

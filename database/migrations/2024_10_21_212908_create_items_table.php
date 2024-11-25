@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('blog_id')->constrained('blogs');
             $table->string('name');
+            $table->integer('price')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
