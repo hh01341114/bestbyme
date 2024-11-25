@@ -66,5 +66,10 @@
                 </a>
             </section>
         @endif
+        
+        <!-- 戻るボタン -->
+        <div class="footer" style="margin-top: 20px;">
+            <a href="/" class="btn btn-secondary">戻る</a>
+        </div>
     </div>
 </x-app-layout>
