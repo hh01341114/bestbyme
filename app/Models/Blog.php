@@ -11,6 +11,8 @@ class Blog extends Model
         'body',
         'category_id',
         'user_id',
+        'followed_id',
+        'following_id',
     ];
 
     //特集ページのページネイション
@@ -36,4 +38,13 @@ class Blog extends Model
         return $this->belongsToMany(User::class, 'likes', 'blog_id', 'user_id');
     }
 
+    //フォローとフォロワーの関連付け
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'followed_id', 'following_id');
+    }
+    public function followings()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'following_id', 'followed_id');
+    }
 }
