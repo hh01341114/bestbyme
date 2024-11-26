@@ -48,20 +48,30 @@ class User extends Authenticatable
     }
 
     // ユーザーがフォローしているユーザー
-    public function following()
-    {
-        return $this->belongsToMany(User::class, 'followers', 'following_id', 'followed_id');
-    }
+    // public function following()
+    // {
+    //     return $this->belongsToMany(User::class, 'followers', 'following_id', 'followed_id');
+    // }
 
-    // ユーザーがフォローされているユーザー
-    public function followers()
-    {
-        return $this->belongsToMany(User::class, 'followers', 'followed_id', 'following_id');
-    }
+    // // ユーザーがフォローされているユーザー
+    // public function followers()
+    // {
+    //     return $this->belongsToMany(User::class, 'followers', 'followed_id', 'following_id');
+    // }
     
     //いいね機能
     public function likedBlogs()
     {
         return $this->belongsToMany(Blog::class, 'likes', 'user_id', 'blog_id');
+    }
+
+    //フォローとフォロワーの関連付け
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'followed_id', 'following_id');
+    }
+    public function followings()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'following_id', 'followed_id');
     }
 }

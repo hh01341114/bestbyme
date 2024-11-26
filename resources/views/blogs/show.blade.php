@@ -19,23 +19,40 @@
             </div>
         </section>
 
-        <!-- いいねボタン -->
         <section class="mt-6">
-            @if (auth()->user()->likedBlogs->contains($blog))
-                <form method="POST" action="{{ route('blogs.unlike', ['blog' => $blog->id]) }}">
-                    @csrf
-                    <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
-                        いいね解除
-                    </button>
-                </form>
-            @else
-                <form method="POST" action="{{ route('blogs.like', ['blog' => $blog->id]) }}">
-                    @csrf
-                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-                        いいね
-                    </button>
-                </form>
-            @endif
+            <div class="flex space-x-2">
+            <!-- いいねボタン -->
+                @if (auth()->user()->likedBlogs->contains($blog))
+                    <form method="POST" action="{{ route('blogs.unlike', ['blog' => $blog->id]) }}">
+                        @csrf
+                        <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
+                            いいね解除
+                        </button>
+                    </form>
+                @else
+                    <form method="POST" action="{{ route('blogs.like', ['blog' => $blog->id]) }}">
+                        @csrf
+                        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                            いいね
+                        </button>
+                    </form>
+                @endif
+            <!-- フォローボタン -->
+                @if (auth()->user()->followings->contains($blog))
+                    <form method="POST" action="{{ route('unfollow', ['blog' => $blog->id]) }}">
+                        @csrf
+                        <button type="submit" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
+                            フォロー解除
+                        </button>
+                    </form>
+                @else
+                    <form method="POST" action="{{ route('follow', ['blog' => $blog->id]) }}">
+                        @csrf
+                        <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                            フォロー
+                        </button>
+                    </form>
+                @endif
         </section>
 
         <!-- 購入一覧 -->
