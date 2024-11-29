@@ -37,22 +37,22 @@
                         </button>
                     </form>
                 @endif
-            <!-- フォローボタン
-                @if (auth()->user()->followings->contains($blog))
-                    <form method="POST" action="{{ route('unfollow', ['blog' => $blog->id]) }}">
+            <!-- フォローボタン -->
+                @if (auth()->user()->followings->contains($user))
+                    <form method="POST" action="{{ route('unfollow', ['user' => $user->id]) }}">
                         @csrf
                         <button type="submit" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
                             フォロー解除
                         </button>
                     </form>
                 @else
-                    <form method="POST" action="{{ route('follow', ['blog' => $blog->id]) }}">
+                    <form method="POST" action="{{ route('follow', ['user' => $user->id]) }}">
                         @csrf
                         <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
                             フォロー
                         </button>
                     </form>
-                @endif -->
+                @endif
         </section>
 
         <!-- 購入一覧 -->
@@ -77,7 +77,7 @@
         <!-- プロフィールリンク -->
         <p class="mb-6">
             投稿者:
-            <a href="{{ route('users.profile', $blog->user_id) }}" class="text-blue-500 hover:underline">
+            <a href="{{ route('blogs.profile', $blog->user_id) }}" class="text-blue-500 hover:underline">
                 {{ $blog->user->name }}
             </a>
         </p>

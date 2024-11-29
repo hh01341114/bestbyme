@@ -40,10 +40,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('/blogs/{blog}/follow', [FollowController::class, 'follow'])->name('follow');
-    Route::post('/blogs/{blog}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
+    Route::post('/users/{user}/follow', [FollowController::class, 'follow'])->name('follow');
+    Route::post('/users/{user}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
 });
 
-Route::get('/users/{id}', [UserProfileController::class, 'show'])->name('users.profile');
+Route::get('/users/{id}', [UserProfileController::class, 'showProfile'])->name('blogs.profile');
 
 require __DIR__.'/auth.php';

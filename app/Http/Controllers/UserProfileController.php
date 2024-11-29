@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Blog;
 
 class UserProfileController extends Controller
 {
-    public function show($id)
+    public function showProfile($id)
     {
-        $user = User::with(['blogs' => function ($query) {
-            $query->latest()->limit(3);
-        }, 'followers', 'followings'])->findOrFail($id);
+        $user = User::with(['blogs.items', 'followers', 'followings'])
+        ->findOrFail($id);
 
         return view('blogs.profile', compact('user'));
     }
+
 }

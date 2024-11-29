@@ -21,7 +21,9 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         $items = $blog->items;
-        return view('blogs.show')->with(['blog' => $blog,'items' => $items,]);
+        $user = $blog->user; 
+
+        return view('blogs.show', compact('blog', 'items', 'user'));
     }
 
     public function create()
