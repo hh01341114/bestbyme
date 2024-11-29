@@ -37,7 +37,7 @@
                         </button>
                     </form>
                 @endif
-            <!-- フォローボタン -->
+            <!-- フォローボタン
                 @if (auth()->user()->followings->contains($blog))
                     <form method="POST" action="{{ route('unfollow', ['blog' => $blog->id]) }}">
                         @csrf
@@ -52,7 +52,7 @@
                             フォロー
                         </button>
                     </form>
-                @endif
+                @endif -->
         </section>
 
         <!-- 購入一覧 -->
@@ -74,16 +74,24 @@
             </div>
         </section>
 
+        <!-- プロフィールリンク -->
+        <p class="mb-6">
+            投稿者:
+            <a href="{{ route('users.profile', $blog->user_id) }}" class="text-blue-500 hover:underline">
+                {{ $blog->user->name }}
+            </a>
+        </p>
+        
         <!-- 編集ボタン -->
         @if (auth()->id() === $blog->user_id)
-            <section class="mt-6">
+            <section class="flex space-x-2 mb-4">
                 <a href="{{ route('blogs.edit', ['blog' => $blog->id]) }}"
-                   class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
-                    編集画面に移動
+                class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                編集画面に移動
                 </a>
             </section>
         @endif
-        
+
         <!-- 戻るボタン -->
         <div class="footer" style="margin-top: 20px;">
             <a href="/" class="btn btn-secondary">戻る</a>

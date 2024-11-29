@@ -6,6 +6,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\UserProfileController;
+
 
 
 Route::get('/dashboard', function () {
@@ -41,5 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/blogs/{blog}/follow', [FollowController::class, 'follow'])->name('follow');
     Route::post('/blogs/{blog}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
 });
+
+Route::get('/users/{id}', [UserProfileController::class, 'show'])->name('users.profile');
 
 require __DIR__.'/auth.php';

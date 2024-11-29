@@ -47,4 +47,9 @@ class Blog extends Model
     {
         return $this->belongsToMany(User::class, 'followers', 'following_id', 'followed_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
