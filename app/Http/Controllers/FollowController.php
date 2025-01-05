@@ -15,7 +15,7 @@ class FollowController extends Controller
             $currentUser->followings()->attach($user->id);
         }
 
-        return back()->with('success', 'フォローしました！');
+        return back();
     }
 
     public function unfollow(Request $request, User $user)
@@ -26,6 +26,6 @@ class FollowController extends Controller
             $currentUser->followings()->detach($user->id);
         }
 
-        return back()->with('success', 'フォローを解除しました！');
+        return back();
     }
 }

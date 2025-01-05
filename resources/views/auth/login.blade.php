@@ -43,5 +43,11 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+
+        <!-- register -->
+        <div class="mt-4 text-center">
+            <p>新規登録がまだの方はこちら：</p>
+            <a href="{{ route('register') }}" class="text-blue-500 hover:underline">新規登録</a>
+        </div>
     </form>
 </x-guest-layout>

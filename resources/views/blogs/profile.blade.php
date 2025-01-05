@@ -25,6 +25,6 @@
                         </a>
                     @endforeach
                 </div>
-        <a href="{{ route('dashboard') }}" class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded">戻る</a>
+        <a href="{{ route('blogs.index') }}" class="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded">戻る</a>
     </div>
 </x-app-layout>

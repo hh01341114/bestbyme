@@ -67,6 +67,11 @@
                     作成
                 </button>
             </div>
+
+            <!-- 戻るボタン -->
+            <div class="footer" style="margin-top: 20px;">
+                <a href="/" class="btn btn-secondary">戻る</a>
+            </div>
         </form>
     </div>
 

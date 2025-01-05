@@ -1,12 +1,14 @@
 <x-app-layout>
-    <div class="container mx-auto px-4 py-6">
+    <header class="site-header">
         <!-- 作成ボタン -->
-        <div class="mb-4 flex justify-end">
+        <div class="mb-4 flex justify-center items-center">
             <a href="{{ route('blogs.create') }}" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">
-                作成
+                記事を作成してみる
             </a>
         </div>
+    </header>
 
+    <div class="container mx-auto px-4 py-6">
         <h1 class="text-2xl font-bold mb-4">ブログ一覧</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @foreach ($blogs as $blog)

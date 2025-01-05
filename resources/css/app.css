@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.card {
+/* .card {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -18,4 +18,20 @@
     font-weight: bold;
     text-align: center;
     margin-top: 8px;
+} */
+
+.site-header {
+    text-decoration: none; /* 初期状態でアンダーラインを非表示 */
+    position: relative; /* 擬似要素の位置を制御 */
+}
+
+.site-header {
+    content: ""; /* 擬似要素を作成 */
+    position: absolute;
+    width: 0;
+    height: 2px; /* アンダーラインの太さ */
+    background-color: #000; /* アンダーラインの色 */
+    bottom: -2px; /* ボタン下に配置 */
+    left: 0;
+    transition: width 0.3s ease; /* アニメーション効果 */
 }
